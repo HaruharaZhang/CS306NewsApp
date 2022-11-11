@@ -7,6 +7,7 @@ import android.view.Menu
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.example.finalproject_plus.adapter.TabAdapter
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         //val savedNews = findViewById<Item>(R.id.savedNews)
-        toolbar.title = "This is title"
+        toolbar.title = R.string.title.toString()
         setSupportActionBar(toolbar)
 
         val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
@@ -32,6 +33,14 @@ class MainActivity : AppCompatActivity() {
                 2 -> tab.text = tabTitles[2]
             }
         }.attach()
+
+
+        val navHeader = findViewById<NavigationView>(R.id.navView)
+        val topHeader = navHeader.getHeaderView(0)
+        navHeader.removeHeaderView(topHeader) //remove top header
+        navHeader.inflateHeaderView(R.layout.nav_header_login)
+
+
 
 
     }

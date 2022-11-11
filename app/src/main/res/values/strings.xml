@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FinalProject_Plus</string>
     <string name="title_xml">This is Title</string>
+    <string name="title">CS306 News App</string>
     <string name="refresh_xml">Refresh</string>
     <string name="search_xml">Search</string>
     <string name="movTitle">Movies Screen</string>

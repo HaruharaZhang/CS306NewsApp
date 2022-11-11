@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/colorPrimary"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="180dp"
+        android:layout_height="22dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="132dp"
+        android:text="Login to discover more"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</RelativeLayout>
