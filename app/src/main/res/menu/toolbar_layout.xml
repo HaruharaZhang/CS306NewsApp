@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/toobar_title"
+        app:showAsAction="ifRoom"
+        android:title="@string/title_xml"></item-->
+    <item
+        android:id="@+id/refresh"
+        android:icon="@android:drawable/stat_notify_sync"
+        android:title="@string/refresh_xml"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/search"
+        android:icon="?android:attr/actionModeWebSearchDrawable"
+        android:title="@string/search_xml"
+        app:showAsAction="ifRoom"></item>
+    <!--
+    <item
+        android:id="@+id/nav_bar"
+        android:icon="@drawable/menu"
+        android:title="@string/search_xml"
+        android:layout_gravity="left"
+        app:showAsAction="ifRoom"></item-->
+
+</menu>
