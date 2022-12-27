@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject_plus.New
 import com.example.finalproject_plus.R
+import com.example.finalproject_plus.connect.NewsAPIConnector
 import com.google.android.material.snackbar.Snackbar
 
 class NewsAdapter (private val imageModelArrayList: MutableList<New>) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -55,6 +56,7 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
 
         override fun onClick(v: View) {
             val msg = newsTitle.text
+            NewsAPIConnector().getNews()
             val snackbar = Snackbar.make(v, "$msg", Snackbar.LENGTH_LONG)
             snackbar.show()
         }

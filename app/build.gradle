@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'kotlin-android'
 }
 
 android {
@@ -36,6 +37,14 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        google()
+    }
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -46,6 +55,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.2'
+//    implementation 'androidx.core:core-ktx:+'
+//    implementation 'androidx.core:core-ktx:+'
+//    implementation 'androidx.core:core-ktx:+'
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.60"
+    //implementation 'com.github.dfloureiro:news-api-kotlin:v2.1'
+    implementation 'com.github.KwabenBerko:News-API-Java:1.0.2'
+    //implementation 'com.github.User:Repo:Version'
+
 //Firebase Authentication Android dependency
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
