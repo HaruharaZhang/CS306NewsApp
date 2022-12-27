@@ -6,18 +6,33 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/email_text"
+        android:id="@+id/register_passwd_re"
+        android:layout_width="230dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="336dp"
+        android:hint="Repeat Password"
+        android:password="true"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/register_passwd"
         android:layout_width="230dp"
         android:layout_height="54dp"
         android:layout_marginTop="264dp"
-        android:hint="Email address"
+        android:hint="Password"
+        android:password="true"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/back_btn4"
+        android:id="@+id/register_back_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -37,30 +52,44 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_name_text"
+        android:id="@+id/register_user_email"
         android:layout_width="230dp"
         android:layout_height="54dp"
         android:layout_marginTop="180dp"
-        android:hint="User Name"
+        android:hint="Email"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/register_btn"
         android:layout_width="221dp"
         android:layout_height="56dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="432dp"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/register_err_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

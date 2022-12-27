@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/login_layout">
 
     <Button
-        android:id="@+id/back_btn4"
+        android:id="@+id/back_btn_login"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -31,31 +32,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/user_name_text"
+        android:id="@+id/register_user_email"
         android:layout_width="230dp"
         android:layout_height="54dp"
         android:layout_marginTop="180dp"
-        android:hint="User Name"
+        android:hint="Email"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="228dp"
         android:layout_height="49dp"
         android:layout_marginTop="272dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/register_btn"
         android:layout_width="221dp"
         android:layout_height="56dp"
         android:layout_marginTop="356dp"
@@ -66,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/login_register_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
@@ -86,4 +89,19 @@
         app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nav_login_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

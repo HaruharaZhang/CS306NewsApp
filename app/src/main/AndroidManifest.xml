@@ -25,6 +25,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".verification.Login" android:exported="false"></activity>
+        <activity android:name=".verification.Register" android:exported="false"></activity>
     </application>
 
 </manifest>
