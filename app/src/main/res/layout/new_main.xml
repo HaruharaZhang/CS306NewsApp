@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/back_btn3"
+        android:id="@+id/new_main_like_btn"
         android:layout_width="62dp"
         android:layout_height="66dp"
         android:layout_marginTop="632dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/back_btn2"
+        android:id="@+id/new_main_save_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="552dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/back_btn"
+        android:id="@+id/new_main_back_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"

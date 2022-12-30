@@ -43,8 +43,8 @@ class GamesFragment : Fragment() {
         for (i in 0..8) {
             val imageModel = New()
             imageModel.setNewsName(getString(newsTitleList[i]))
-            imageModel.setNewsImage(newsList[i])
-            imageModel.setNewsDesc(getString(newsDesc))
+            //imageModel.setNewsImage(newsList[i])
+            //imageModel.setNewsDesc(getString(newsDesc))
             list.add(imageModel)
         }
         return list

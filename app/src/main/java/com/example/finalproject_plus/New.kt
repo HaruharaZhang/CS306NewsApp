@@ -1,5 +1,8 @@
 package com.example.finalproject_plus
 
+import com.squareup.picasso.RequestCreator
+import java.util.Date
+
 /*
  * Data model class to store logos and team names from F1
  */
@@ -7,7 +10,8 @@ class New {
     private var newsId: Int? = null
     private var newsName: String? = null
     private var newsDesc: String? = null
-    private var newsImage: Int = 0
+    private var newsImage: String?= null
+    private var newsTime: String? = null
 
     fun getNewsId(): Int? {
         return newsId
@@ -27,11 +31,17 @@ class New {
     fun setNewsDesc(new_desc: String){
         this.newsDesc = new_desc
     }
-    fun getNewsImage(): Int{
+    fun getNewsImage(): String? {
         return newsImage
     }
-    fun setNewsImage(new_image: Int){
+    fun setNewsImage(new_image: String){
         this.newsImage = new_image
+    }
+    fun getNewsTime(): String? {
+        return newsTime
+    }
+    fun setNewsTime(newsTime: String){
+        this.newsTime = newsTime
     }
 
 }

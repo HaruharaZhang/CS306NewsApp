@@ -55,12 +55,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.2'
-//    implementation 'androidx.core:core-ktx:+'
-//    implementation 'androidx.core:core-ktx:+'
-//    implementation 'androidx.core:core-ktx:+'
-    //implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.60"
-    //implementation 'com.github.dfloureiro:news-api-kotlin:v2.1'
     implementation 'com.github.KwabenBerko:News-API-Java:1.0.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.picasso:picasso:2.8'
     //implementation 'com.github.User:Repo:Version'
 
 //Firebase Authentication Android dependency

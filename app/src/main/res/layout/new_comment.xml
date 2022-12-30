@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/back_btn"
+        android:id="@+id/new_main_back_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
