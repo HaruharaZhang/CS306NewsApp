@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                 1 -> tab.text = tabTitles[1]
                 2 -> tab.text = tabTitles[2]
                 3 -> tab.text = tabTitles[3]
+                4 -> tab.text = tabTitles[4]
             }
         }.attach()
 
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         val navHeader = findViewById<NavigationView>(R.id.navView)
 
         navHeader.menu.findItem(R.id.nav_refresh).setOnMenuItemClickListener {
-            Toast.makeText(this, "Refreshing news", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.refresh_news, Toast.LENGTH_LONG).show()
             finish();
             startActivity(getIntent())
             //Toast.makeText(this, "Done! news refreshed", Toast.LENGTH_LONG).show()
@@ -89,12 +90,11 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        navHeader.menu.findItem(R.id.savedNews).setOnMenuItemClickListener {
-            jumpIntent.putExtra("name", "MainActivity")
-            startForLogin.launch(jumpIntent)
-
-            true
-        }
+//        navHeader.menu.findItem(R.id.savedNews).setOnMenuItemClickListener {
+//            jumpIntent = Intent(this, SavedNews::class.java)
+//            startActivity(jumpIntent)
+//            true
+//        }
 
 
     }

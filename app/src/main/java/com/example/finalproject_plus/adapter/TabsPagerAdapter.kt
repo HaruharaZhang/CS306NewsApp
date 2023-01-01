@@ -13,6 +13,7 @@ class TabAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) 
             1 -> return GamesFragment()
             2 -> return MoviesFragment()
             3 -> return CustomFragment()
+            4 -> return SaveNews()
         }
         return TVFragment()
     }
@@ -20,6 +21,6 @@ class TabAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) 
     // get item count - equal to number of tabs
     override fun getItemCount(): Int
     {
-        return 4
+        return 5
     }
 }

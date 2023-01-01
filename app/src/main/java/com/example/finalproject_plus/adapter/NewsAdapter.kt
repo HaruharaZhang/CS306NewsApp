@@ -1,6 +1,7 @@
 package com.example.finalproject_plus.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,10 +35,12 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = imageModelArrayList[position]
-
-        Picasso.get().load(info.getNewsImage()).fit().into(holder.newsImage)
-        holder.newsTitle.text = info.getNewsName()
-        holder.newsDesc.text = info.getNewsTime()
+        //Log.i("NewsAdapter", imageModelArrayList[position].getNewsName())
+        //if(imageModelArrayList[position].getNewsName().equals(null)){
+            Picasso.get().load(info.getNewsImage()).fit().into(holder.newsImage)
+            holder.newsTitle.text = info.getNewsName()
+            holder.newsDesc.text = info.getNewsTime()
+        //}
     }
 
     /*
@@ -64,7 +67,7 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
 
         override fun onClick(v: View) {
             var index = 0
-            for (i in 0 until imageModelArrayList.size - 1) {
+            for (i in 0 until imageModelArrayList.size) {
                 if(imageModelArrayList[i].getNewsName() == newsTitle.text){
                     index = i
                     break
@@ -80,17 +83,6 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
 
             itemView.context.startActivity(intent)
 
-            //val msg = newsTitle.text
-            //NewsAPIConnector().getNews()
-            //NewsAPIConnector().getNews()
-            //val snackbar = Snackbar.make(v, "$msg", Snackbar.LENGTH_LONG)
-            //snackbar.show()
         }
     }
 }
-
-
-
-
-//var intent = Intent(itemView.context, TeamDetail::class.java)
-//itemView.context.startActivity(intent)

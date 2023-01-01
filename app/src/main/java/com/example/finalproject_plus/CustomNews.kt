@@ -73,8 +73,8 @@ class CustomNews: AppCompatActivity(){
                         val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
                         val builder = NotificationCompat.Builder(this, "com.example.finalproject_plue.ONE")
                             .setSmallIcon(R.mipmap.ic_launcher)
-                            .setContentTitle("You receive a new message")
-                            .setContentText("Hay we got some new news for you! come to take a look")
+                            .setContentTitle(resources.getString(R.string.notify_title))
+                            .setContentText(resources.getString(R.string.notify_desc))
                             .setPriority(NotificationCompat.PRIORITY_MAX )
                         with(NotificationManagerCompat.from(this)) {
                             notify(1, builder.build())
@@ -82,8 +82,7 @@ class CustomNews: AppCompatActivity(){
                 }
             }
             }
-
-            Log.i("CustomNews", getCategory().toString())
+            //Log.i("CustomNews", getCategory().toString())
             jumpIntent = Intent(this, MainActivity::class.java)
             startActivity(jumpIntent)
         }

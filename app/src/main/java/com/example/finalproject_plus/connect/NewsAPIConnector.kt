@@ -25,7 +25,8 @@ URL to this picture: https://cdn-icons-png.flaticon.com/512/5762/5762943.png
 
 class NewsAPIConnector{
     //private var MY_API_KEY = "50494cc6bf584519a2fd2bd555474c33"
-    private var MY_API_KEY = "c72776346c8c4b069199f516033a799e"
+    //private var MY_API_KEY = "c72776346c8c4b069199f516033a799e"
+    private var MY_API_KEY = "181ee3e0b4e844c582d51db77e28908b"
     //private var url = "https://newsapi.org/v1/articles?source=google-news&apiKey=50494cc6bf584519a2fd2bd555474c33"
     //private var url = "https://newsapi.org/v1/articles?source=google-news&apiKey=c72776346c8c4b069199f516033a799e"
     private var basicUrl = "https://newsapi.org/v1/articles?source="

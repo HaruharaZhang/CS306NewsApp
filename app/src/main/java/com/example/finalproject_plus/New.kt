@@ -14,6 +14,22 @@ class New {
     private var newsTime: String? = null
     private var newsAuthor: String?= null
     private var newsUrl: String?= null
+    constructor(){
+    }
+
+    constructor(news_name: String?,
+                news_desc: String?,
+                news_image: String?,
+                news_time: String?,
+                news_author: String?,
+                news_url: String?){
+        newsName = news_name
+        newsDesc = news_desc
+        newsImage = news_image
+        newsTime = news_time
+        newsAuthor = news_author
+        newsUrl = news_url
+    }
 
     fun getNewsId(): Int? {
         return newsId

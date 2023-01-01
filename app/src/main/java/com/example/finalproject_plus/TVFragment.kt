@@ -76,18 +76,18 @@ class TVFragment : Fragment() {
                         imageModel.setNewsImage(news.articles[i].urlToImage)
                     }
                     if(news.articles[i].publishedAt == null){
-                        imageModel.setNewsTime("time unknown")
+                        imageModel.setNewsTime(resources.getString(R.string.time_unknown))
                     } else {
                         imageModel.setNewsTime(news.articles[i].publishedAt.toString())
                     }
 
                     if(news.articles[i].author == null){
-                        imageModel.setNewsAuthor("no author found")
+                        imageModel.setNewsAuthor(resources.getString(R.string.no_author_found))
                     } else {
                         imageModel.setNewsAuthor(news.articles[i].author)
                     }
                     if(news.articles[i].description == null){
-                        imageModel.setNewsDesc("no description for this articles")
+                        imageModel.setNewsDesc(resources.getString(R.string.no_description))
                     } else {
                         imageModel.setNewsDesc(news.articles[i].description)
                     }

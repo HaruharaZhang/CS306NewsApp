@@ -12,7 +12,22 @@
         <item>Games</item>
         <item>Movies</item>
         <item>Custom</item>
+        <item>Saved-News</item>
     </string-array>
+    <string name = "no_picture_image">https://cdn-icons-png.flaticon.com/512/5762/5762943.png</string>
+    <string name="time_unknown">Time unknown</string>
+    <string name="no_author_found">No author found</string>
+    <string name = "no_description">no description for this articles</string>
+    <string name="input_information">please input your email and password</string>
+    <string name="passwd_invalided">the minimum length of password is 8</string>
+    <string name="passwd_no_match">This email is not match the password</string>
+    <string name="reg_email_error">Cannot register with this email address, please try another one</string>
+    <string name="passwd_not_match_reg">The password and your repeat password is not a same one</string>
+    <string name="passwd_font_err">The length of password should larger than 8</string>
+    <string name="email_font_err">Invalid email format</string>
+    <string name="notify_title">You receive a new message</string>
+    <string name="notify_desc">Hay we got some new news for you! come to take a look</string>
+    <string name="refresh_news">Refreshing news</string>
 
 
 </resources>

@@ -12,6 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject_plus.adapter.NewsAdapter
 import com.example.finalproject_plus.connect.NewsAPIConnector
 import com.example.finalproject_plus.verification.CustomNewsCategory
+import com.google.android.gms.common.config.GservicesValue.value
+import java.math.RoundingMode.valueOf
+
+/*
+The 'no image' picture comes from
+https://www.flaticon.com/free-icon/no-pictures_5762943?term=no+photo&page=1&position=8&origin=tag&related_id=5762943
+URL to this picture: https://cdn-icons-png.flaticon.com/512/5762/5762943.png
+
+This code is making use of the Picasso library to pull images from News API
+ */
 
 class CustomFragment: Fragment(){
     @SuppressLint("MissingInflatedId")
@@ -63,18 +73,18 @@ class CustomFragment: Fragment(){
                             imageModel.setNewsImage(news.articles[i].urlToImage)
                         }
                         if(news.articles[i].publishedAt == null){
-                            imageModel.setNewsTime("time unknown")
+                            imageModel.setNewsTime(resources.getString(R.string.time_unknown))
                         } else {
                             imageModel.setNewsTime(news.articles[i].publishedAt.toString())
                         }
 
                         if(news.articles[i].author == null){
-                            imageModel.setNewsAuthor("no author found")
+                            imageModel.setNewsAuthor(resources.getString(R.string.no_author_found))
                         } else {
                             imageModel.setNewsAuthor(news.articles[i].author)
                         }
                         if(news.articles[i].description == null){
-                            imageModel.setNewsDesc("no description for this articles")
+                            imageModel.setNewsDesc(resources.getString(R.string.no_description))
                         } else {
                             imageModel.setNewsDesc(news.articles[i].description)
                         }
@@ -83,7 +93,6 @@ class CustomFragment: Fragment(){
                     }
                 }
             }
-
         }
         return list
     }

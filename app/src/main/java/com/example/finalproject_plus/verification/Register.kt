@@ -43,17 +43,17 @@ class Register : AppCompatActivity() {
                                 jumpIntent = Intent(this, MainActivity::class.java)
                                 startActivity(jumpIntent)
                             } else {
-                                errorMsg.text = "Cannot register with this email address, please try another one"
+                                errorMsg.setText(R.string.reg_email_error)
                             }
                         }
                     } else {
-                        errorMsg.text = "The password and your repeat password is not a same one"
+                        errorMsg.setText(R.string.passwd_not_match_reg)
                     }
                 } else {
-                    errorMsg.text = "The length of password should larger than 8"
+                    errorMsg.setText(R.string.passwd_font_err)
                 }
             } else {
-                errorMsg.text = "Invalid email format"
+                errorMsg.setText(R.string.email_font_err)
             }
         }
 

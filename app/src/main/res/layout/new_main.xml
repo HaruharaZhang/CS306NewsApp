@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/white">
 
@@ -18,24 +19,34 @@ android:background="@color/white">
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
     <Button
-        android:id="@+id/new_main_like_btn"
-        android:layout_width="62dp"
-        android:layout_height="66dp"
+        android:id="@+id/new_main_size_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_shape"
-        app:icon="@drawable/like"
-        app:iconPadding="2dp"
-        app:iconSize="30dp"
+        android:text="A"
+        android:textSize="24sp"
+        app:icon="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/new_main_unsave_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape"
+        app:icon="@android:drawable/star_big_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +83,7 @@ android:background="@color/white">
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
-        android:autoSizeTextType="uniform"
+        android:autoSizeTextType="none"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +110,7 @@ android:background="@color/white">
         android:layout_marginStart="16dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="16dp"
-        android:autoSizeTextType="uniform"
+        android:autoSizeTextType="none"
         android:text="This is the news title"
         android:textSize="24sp"
         android:textStyle="bold"

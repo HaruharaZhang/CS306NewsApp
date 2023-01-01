@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finalproject_plus.MainActivity
 import com.example.finalproject_plus.R
 import com.google.firebase.auth.FirebaseAuth
+import java.math.RoundingMode.valueOf
 
 class Login : AppCompatActivity(){
     lateinit var jumpIntent: Intent
@@ -43,9 +44,9 @@ class Login : AppCompatActivity(){
         loginBtn.setOnClickListener(){
             loginError.text = ""
             if(email.text.isEmpty() || passwd.text.isEmpty()){
-                loginError.text = "please input your email and password"
+                loginError.setText(R.string.input_information)
             } else if(passwd.text.toString().length < 8) {
-                loginError.text = "the minimum length of password is 8"
+                loginError.setText(R.string.passwd_invalided)
             } else {
                 auth.signInWithEmailAndPassword(email.text.toString(), passwd.text.toString()).addOnCompleteListener {
                         task ->
@@ -55,7 +56,7 @@ class Login : AppCompatActivity(){
                         jumpIntent = Intent(this, MainActivity::class.java)
                         startActivity(jumpIntent)
                     } else {
-                        loginError.text = "This email is not match the password"
+                        loginError.setText(R.string.passwd_no_match)
                     }
                 }
             }
