@@ -24,7 +24,7 @@ class Register : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.register_user_email)
         val passwd = findViewById<EditText>(R.id.register_passwd)
         val passwdRe = findViewById<EditText>(R.id.register_passwd_re)
-        val registerBtn = findViewById<Button>(R.id.register_btn)
+        val registerBtn = findViewById<Button>(R.id.custom_save_btn)
         val errorMsg = findViewById<TextView>(R.id.register_err_msg)
         var auth = FirebaseAuth.getInstance()
 

@@ -8,16 +8,16 @@
         android:id="@+id/toobar_title"
         app:showAsAction="ifRoom"
         android:title="@string/title_xml"></item-->
-    <item
-        android:id="@+id/refresh"
-        android:icon="@android:drawable/stat_notify_sync"
-        android:title="@string/refresh_xml"
-        app:showAsAction="ifRoom"></item>
-    <item
-        android:id="@+id/search"
-        android:icon="?android:attr/actionModeWebSearchDrawable"
-        android:title="@string/search_xml"
-        app:showAsAction="ifRoom"></item>
+<!--    <item-->
+<!--        android:id="@+id/refresh"-->
+<!--        android:icon="@android:drawable/stat_notify_sync"-->
+<!--        android:title="@string/refresh_xml"-->
+<!--        app:showAsAction="ifRoom"></item>-->
+<!--    <item-->
+<!--        android:id="@+id/search"-->
+<!--        android:icon="?android:attr/actionModeWebSearchDrawable"-->
+<!--        android:title="@string/search_xml"-->
+<!--        app:showAsAction="ifRoom"></item>-->
     <!--
     <item
         android:id="@+id/nav_bar"

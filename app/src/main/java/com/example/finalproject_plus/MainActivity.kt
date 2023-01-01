@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -24,16 +25,19 @@ import com.google.firebase.FirebaseApp
 
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var jumpIntent: Intent
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         jumpIntent = Intent(this, Login::class.java)
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         //val savedNews = findViewById<Item>(R.id.savedNews)
-        toolbar.title = R.string.title.toString()
+        val myTitle = R.string.title
         setSupportActionBar(toolbar)
+        getSupportActionBar()?.setTitle(myTitle).toString()
 
         val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
         val viewPager = findViewById<ViewPager2>(R.id.pager)
@@ -45,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 0 -> tab.text = tabTitles[0]
                 1 -> tab.text = tabTitles[1]
                 2 -> tab.text = tabTitles[2]
+                3 -> tab.text = tabTitles[3]
             }
         }.attach()
 
@@ -54,9 +59,9 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         drawerLayout.addDrawerListener(drawerListener)
 
-
     }
 
+    @SuppressLint("ResourceType")
     override fun onStart() {
         super.onStart()
         if(Authorization().getUserStatus()){
@@ -67,6 +72,31 @@ class MainActivity : AppCompatActivity() {
             navHeader.removeHeaderView(topHeader) //remove top header
             navHeader.inflateHeaderView(R.layout.nav_header_login)
         }
+
+        //var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val navHeader = findViewById<NavigationView>(R.id.navView)
+
+        navHeader.menu.findItem(R.id.nav_refresh).setOnMenuItemClickListener {
+            Toast.makeText(this, "Refreshing news", Toast.LENGTH_LONG).show()
+            finish();
+            startActivity(getIntent())
+            //Toast.makeText(this, "Done! news refreshed", Toast.LENGTH_LONG).show()
+            true
+        }
+        navHeader.menu.findItem(R.id.nav_custom_news).setOnMenuItemClickListener {
+            jumpIntent = Intent(this, CustomNews::class.java)
+            startActivity(jumpIntent)
+            true
+        }
+
+        navHeader.menu.findItem(R.id.savedNews).setOnMenuItemClickListener {
+            jumpIntent.putExtra("name", "MainActivity")
+            startForLogin.launch(jumpIntent)
+
+            true
+        }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -119,14 +149,13 @@ class MainActivity : AppCompatActivity() {
                 userEmail.text = Authorization().getUserEmail()
 
                 //this is logout button
-                val navHeader = findViewById<NavigationView>(R.id.navView)
-                val logoutBtn = navHeader.findViewById<Button>(R.id.register_btn)
+                //val navHeader = findViewById<NavigationView>(R.id.navView)
+                val logoutBtn = navHeader.findViewById<Button>(R.id.custom_save_btn)
                 logoutBtn.setOnClickListener {
                     Authorization().logout()
                     finish()
                 }
             }
-
         }
     }
 }

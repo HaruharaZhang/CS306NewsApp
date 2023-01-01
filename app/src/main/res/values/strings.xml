@@ -8,27 +8,11 @@
     <string name="gameTitle">Games Screen</string>
     <string name="tvTitle">TV Screen</string>
     <string-array name="tabTitles">
-        <item>Top TV Shows</item>
-        <item>Top Games</item>
-        <item>Top Movies</item>
+        <item>General</item>
+        <item>Games</item>
+        <item>Movies</item>
+        <item>Custom</item>
     </string-array>
-    <string name="news_a">This is the news a</string>
-    <string name="news_a_desc">This is the news a description</string>
-    <string name="news_b">This is the news b</string>
-    <string name="news_b_desc">This is the news b description</string>
-
-    <string name="shark1">this is news1</string>
-    <string name="shark2">this is news2</string>
-    <string name="shark3">this is news3</string>
-    <string name="shark4">this is news4</string>
-    <string name="shark5">this is news5</string>
-    <string name="shark6">this is news6</string>
-    <string name="shark7">this is news7</string>
-    <string name="shark8">this is news8</string>
-    <string name="shark9">this is news9</string>
-    <string name="shark0">this is news10</string>
-
-    <string name="newsDesc">this is news description</string>
 
 
 </resources>

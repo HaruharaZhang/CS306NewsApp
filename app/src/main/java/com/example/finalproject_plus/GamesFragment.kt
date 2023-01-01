@@ -1,5 +1,6 @@
 package com.example.finalproject_plus
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject_plus.adapter.NewsAdapter
+import com.example.finalproject_plus.connect.NewsAPIConnector
 
 class GamesFragment : Fragment() {
 
@@ -35,17 +37,49 @@ class GamesFragment : Fragment() {
     }
 
     private fun populateList(): ArrayList<New> {
-        val list = ArrayList<New>()
-        val newsList = arrayOf(R.drawable.shark1, R.drawable.shark2, R.drawable.shark3, R.drawable.shark4, R.drawable.shark5, R.drawable.shark6, R.drawable.shark7, R.drawable.shark8, R.drawable.shark9, R.drawable.shark1)
-        val newsTitleList = arrayOf(R.string.shark1, R.string.shark2, R.string.shark3, R.string.shark4, R.string.shark5, R.string.shark6, R.string.shark7, R.string.shark8, R.string.shark9)
+        //val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        //StrictMode.setThreadPolicy(policy)
 
-        val newsDesc = R.string.newsDesc
-        for (i in 0..8) {
-            val imageModel = New()
-            imageModel.setNewsName(getString(newsTitleList[i]))
-            //imageModel.setNewsImage(newsList[i])
-            //imageModel.setNewsDesc(getString(newsDesc))
-            list.add(imageModel)
+        var news = NewsAPIConnector().getNews("fox-sports")
+        val list = ArrayList<New>()
+        if (news != null) {
+            if(news.articles.size != 0){
+//                print(news.status)
+//                print(news.articles[0].url)
+
+                for (i in 0 until news.articles.size) {
+                    val imageModel = New()
+
+                    if(news.articles[i].title.length > 135){
+                        imageModel.setNewsName(news.articles[i].title.substring(0,130) + ".....")
+                    } else {
+                        imageModel.setNewsName(news.articles[i].title)
+                    }
+                    if(news.articles[i].urlToImage == null){
+                        imageModel.setNewsImage("https://cdn-icons-png.flaticon.com/512/5762/5762943.png")
+                    } else {
+                        imageModel.setNewsImage(news.articles[i].urlToImage)
+                    }
+                    if(news.articles[i].publishedAt == null){
+                        imageModel.setNewsTime("time unknown")
+                    } else {
+                        imageModel.setNewsTime(news.articles[i].publishedAt.toString())
+                    }
+
+                    if(news.articles[i].author == null){
+                        imageModel.setNewsAuthor("no author found")
+                    } else {
+                        imageModel.setNewsAuthor(news.articles[i].author)
+                    }
+                    if(news.articles[i].description == null){
+                        imageModel.setNewsDesc("no description for this articles")
+                    } else {
+                        imageModel.setNewsDesc(news.articles[i].description)
+                    }
+                    imageModel.setNewsUrl(news.articles[i].url)
+                    list.add(imageModel)
+                }
+            }
         }
         return list
     }

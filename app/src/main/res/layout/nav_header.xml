@@ -32,7 +32,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/custom_save_btn"
         android:layout_width="163dp"
         android:layout_height="64dp"
         android:layout_alignParentStart="true"

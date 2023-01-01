@@ -1,8 +1,13 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/myAppAndGames"
-            android:title="News" />
+            android:id="@+id/nav_refresh"
+            android:title="Refresh news"/>
+        <item
+            android:id="@+id/nav_custom_news"
+            android:title="Custom news"/>
         <item
             android:id="@+id/savedNews"
             android:title="Saved news" />

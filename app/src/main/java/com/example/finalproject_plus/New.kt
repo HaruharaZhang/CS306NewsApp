@@ -12,6 +12,8 @@ class New {
     private var newsDesc: String? = null
     private var newsImage: String?= null
     private var newsTime: String? = null
+    private var newsAuthor: String?= null
+    private var newsUrl: String?= null
 
     fun getNewsId(): Int? {
         return newsId
@@ -42,6 +44,18 @@ class New {
     }
     fun setNewsTime(newsTime: String){
         this.newsTime = newsTime
+    }
+    fun getNewsAuthor(): String? {
+        return newsAuthor
+    }
+    fun setNewsAuthor(newsAuthor: String){
+        this.newsAuthor = newsAuthor
+    }
+    fun getNewsUrl(): String? {
+        return newsUrl
+    }
+    fun setNewsUrl(newsUrl: String){
+        this.newsUrl = newsUrl
     }
 
 }

@@ -3,9 +3,7 @@ package com.example.finalproject_plus.adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.finalproject_plus.GamesFragment
-import com.example.finalproject_plus.MoviesFragment
-import com.example.finalproject_plus.TVFragment
+import com.example.finalproject_plus.*
 
 class TabAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
@@ -14,6 +12,7 @@ class TabAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) 
             0 -> return TVFragment()
             1 -> return GamesFragment()
             2 -> return MoviesFragment()
+            3 -> return CustomFragment()
         }
         return TVFragment()
     }
@@ -21,6 +20,6 @@ class TabAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) 
     // get item count - equal to number of tabs
     override fun getItemCount(): Int
     {
-        return 3
+        return 4
     }
 }

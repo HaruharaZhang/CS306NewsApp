@@ -1,6 +1,7 @@
 package com.example.finalproject_plus
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
@@ -8,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,10 @@ import com.example.finalproject_plus.connect.NewsAPIConnector
 import com.squareup.picasso.Picasso
 
 /*
+The 'no image' picture comes from
+https://www.flaticon.com/free-icon/no-pictures_5762943?term=no+photo&page=1&position=8&origin=tag&related_id=5762943
+URL to this picture: https://cdn-icons-png.flaticon.com/512/5762/5762943.png
+
 This code is making use of the Picasson library to pull images from News API
  */
 
@@ -38,6 +44,7 @@ class TVFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
         val mAdapter = NewsAdapter(imageModelArrayList)
         recyclerView.adapter = mAdapter
+
         return view
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
@@ -49,12 +56,11 @@ class TVFragment : Fragment() {
     private fun populateList(): ArrayList<New> {
         val policy = ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
-        var news = NewsAPIConnector().getNews()
+
+        var news = NewsAPIConnector().getNews("breitbart-news")
         val list = ArrayList<New>()
         if (news != null) {
             if(news.articles.size != 0){
-//                print(news.status)
-//                print(news.articles[0].url)
 
                 for (i in 0 until news.articles.size) {
                     val imageModel = New()
@@ -64,10 +70,28 @@ class TVFragment : Fragment() {
                     } else {
                         imageModel.setNewsName(news.articles[i].title)
                     }
-                    imageModel.setNewsImage(news.articles[i].urlToImage)
-                    imageModel.setNewsTime(news.articles[i].publishedAt.toString())
-                    //imageModel.setNewsImage()
-                    //Log.i("PopularList", news.articles[i].urlToImage)
+                    if(news.articles[i].urlToImage == null){
+                        imageModel.setNewsImage("https://cdn-icons-png.flaticon.com/512/5762/5762943.png")
+                    } else {
+                        imageModel.setNewsImage(news.articles[i].urlToImage)
+                    }
+                    if(news.articles[i].publishedAt == null){
+                        imageModel.setNewsTime("time unknown")
+                    } else {
+                        imageModel.setNewsTime(news.articles[i].publishedAt.toString())
+                    }
+
+                    if(news.articles[i].author == null){
+                        imageModel.setNewsAuthor("no author found")
+                    } else {
+                        imageModel.setNewsAuthor(news.articles[i].author)
+                    }
+                    if(news.articles[i].description == null){
+                        imageModel.setNewsDesc("no description for this articles")
+                    } else {
+                        imageModel.setNewsDesc(news.articles[i].description)
+                    }
+                    imageModel.setNewsUrl(news.articles[i].url)
                     list.add(imageModel)
                 }
             }

@@ -4,10 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white">
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/movTitle"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

@@ -1,24 +1,22 @@
 package com.example.finalproject_plus.adapter
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalproject_plus.MainActivity
 import com.example.finalproject_plus.New
 import com.example.finalproject_plus.NewsMain
 import com.example.finalproject_plus.R
-import com.example.finalproject_plus.connect.NewsAPIConnector
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+
+/*
+This class is using Picasso to load the image into the app
+info: https://square.github.io/picasso/
+ */
 
 class NewsAdapter (private val imageModelArrayList: MutableList<New>) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
@@ -37,12 +35,9 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = imageModelArrayList[position]
 
-        Picasso.get().load(info.getNewsImage()).into(holder.newsImage)
+        Picasso.get().load(info.getNewsImage()).fit().into(holder.newsImage)
         holder.newsTitle.text = info.getNewsName()
-
         holder.newsDesc.text = info.getNewsTime()
-
-
     }
 
     /*
@@ -59,19 +54,37 @@ class NewsAdapter (private val imageModelArrayList: MutableList<New>) : Recycler
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
         var newsImage = itemView.findViewById<View>(R.id.icon) as ImageView
-        var newsTitle = itemView.findViewById<View>(R.id.new_title) as TextView
+        var newsTitle = itemView.findViewById<View>(R.id.new_main_title) as TextView
         var newsDesc = itemView.findViewById<View>(R.id.new_desc) as TextView
+
 
         init {
             itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View) {
-            val msg = newsTitle.text
+            var index = 0
+            for (i in 0 until imageModelArrayList.size - 1) {
+                if(imageModelArrayList[i].getNewsName() == newsTitle.text){
+                    index = i
+                    break
+                }
+            }
+            var intent = Intent(itemView.context, NewsMain::class.java)
+            intent.putExtra("title", imageModelArrayList[index].getNewsName())
+            intent.putExtra("author", imageModelArrayList[index].getNewsAuthor())
+            intent.putExtra("time", imageModelArrayList[index].getNewsTime())
+            intent.putExtra("desc", imageModelArrayList[index].getNewsDesc())
+            intent.putExtra("image",imageModelArrayList[index].getNewsImage())
+            intent.putExtra("url", imageModelArrayList[index].getNewsUrl())
+
+            itemView.context.startActivity(intent)
+
+            //val msg = newsTitle.text
             //NewsAPIConnector().getNews()
             //NewsAPIConnector().getNews()
-            val snackbar = Snackbar.make(v, "$msg", Snackbar.LENGTH_LONG)
-            snackbar.show()
+            //val snackbar = Snackbar.make(v, "$msg", Snackbar.LENGTH_LONG)
+            //snackbar.show()
         }
     }
 }

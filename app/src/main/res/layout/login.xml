@@ -7,7 +7,7 @@
     android:id="@+id/login_layout">
 
     <Button
-        android:id="@+id/back_btn_login"
+        android:id="@+id/custom_back_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/custom_save_btn"
         android:layout_width="221dp"
         android:layout_height="56dp"
         android:layout_marginTop="356dp"

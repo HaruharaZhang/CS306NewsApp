@@ -1,14 +1,11 @@
 package com.example.finalproject_plus.verification
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finalproject_plus.MainActivity
 import com.example.finalproject_plus.R
@@ -22,8 +19,8 @@ class Login : AppCompatActivity(){
         setContentView(R.layout.login)
         var auth = FirebaseAuth.getInstance()
 
-        val backBtn = findViewById<Button>(R.id.back_btn_login)
-        val loginBtn = findViewById<Button>(R.id.register_btn)
+        val backBtn = findViewById<Button>(R.id.custom_back_btn)
+        val loginBtn = findViewById<Button>(R.id.custom_save_btn)
         val email = findViewById<EditText>(R.id.register_user_email)
         val passwd = findViewById<EditText>(R.id.password)
         val loginError = findViewById<TextView>(R.id.nav_login_message)
