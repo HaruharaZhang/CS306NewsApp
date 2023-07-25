@@ -1,6 +1,6 @@
 # CS306NewsApp_plus
 
-English | [简体中文](http://example.com)
+English | [简体中文](https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/README_ZH.md)
 
 Here is the code for the CS306 project
 This codes have already assigned for a student in Swansea University, please do not copy or use this codes for your coursework or assignment. 
