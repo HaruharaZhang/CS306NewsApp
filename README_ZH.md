@@ -40,10 +40,11 @@
 
 ## 项目Demo
 
-视频链接：
+视频链接：https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/2131205.mp4
+*你也可以在项目主目录下的/demo文件夹下找到video.mp4视频文件*
 
 ## 项目截图
 
-
-
-
+![侧滑菜单](https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/ScreenCapture%201.png)
+![新闻信息页](https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/ScreenCapture%202.png)
+![新闻列表](https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/ScreenCapture.png)
