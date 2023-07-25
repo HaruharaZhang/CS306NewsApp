@@ -39,7 +39,7 @@ You can find detailed version control information in the commit history of this 
 
 ## Project Demo
 
-Video link: https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/2131205.mp4
+Video link: https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/video.mp4
 *You can also find the video file "video.mp4" in the /demo folder of the project's main directory.*
 
 ## Project Screenshots

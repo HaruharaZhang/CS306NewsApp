@@ -40,7 +40,7 @@
 
 ## 项目Demo
 
-视频链接：https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/2131205.mp4
+视频链接：https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/demo/video.mp4
 *你也可以在项目主目录下的/demo文件夹下找到video.mp4视频文件*
 
 ## 项目截图
