@@ -1,6 +1,6 @@
 # CS306NewsApp_plus
 
-[English](http://example.com) | 简体中文
+[English](https://github.com/HtmlIsTheBestProgrammingLanaguage/CS306NewsApp/blob/main/README.md) | 简体中文
 
 这里是课程CS306的Coursework的代码
 代码提交日期为2023年1月7日
